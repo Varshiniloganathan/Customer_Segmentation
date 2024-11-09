@@ -2,12 +2,13 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import pickle
 import numpy as np
+import os
 
 # Initialize Flask app
 app = Flask(__name__)
-CORS(app, origins=["http://localhost:3000"])
+CORS(app)
 # Load the scaler and KMeans model
-import os
+
 
 scaler_path = os.path.join(os.path.dirname(__file__), 'scaler.pkl')
 kmeans_path = os.path.join(os.path.dirname(__file__), 'kmeans_model.pkl')
@@ -60,8 +61,7 @@ def predict_segment():
         'suggestion': customer_data['suggestion']
     })
 
-import os
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))  # Default to 5000 if no PORT env var is set
-    app.run(host="0.0.0.0", port=port, debug=True)
+    app.run(host="0.0.0.0", port=port, debug=False)
