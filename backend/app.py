@@ -7,9 +7,9 @@ import numpy as np
 app = Flask(__name__)
 CORS(app, origins=["http://localhost:3000"])
 # Load the scaler and KMeans model
-with open('scaler.pkl', 'rb') as f:
+with open('backend/scaler.pkl', 'rb') as f:
     scaler = pickle.load(f)
-with open('kmeans_model.pkl', 'rb') as f:
+with open('backend/kmeans_model.pkl', 'rb') as f:
     kmeans = pickle.load(f)
 
 # Route to predict customer segment
