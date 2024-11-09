@@ -7,9 +7,14 @@ import numpy as np
 app = Flask(__name__)
 CORS(app, origins=["http://localhost:3000"])
 # Load the scaler and KMeans model
-with open('backend/scaler.pkl', 'rb') as f:
+import os
+
+scaler_path = os.path.join(os.path.dirname(__file__), 'scaler.pkl')
+kmeans_path = os.path.join(os.path.dirname(__file__), 'kmeans_model.pkl')
+
+with open(scaler_path, 'rb') as f:
     scaler = pickle.load(f)
-with open('backend/kmeans_model.pkl', 'rb') as f:
+with open(kmeans_path, 'rb') as f:
     kmeans = pickle.load(f)
 
 # Route to predict customer segment
@@ -55,5 +60,8 @@ def predict_segment():
         'suggestion': customer_data['suggestion']
     })
 
+import os
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))  # Default to 5000 if no PORT env var is set
+    app.run(host="0.0.0.0", port=port, debug=True)
