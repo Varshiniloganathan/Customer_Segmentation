@@ -14,7 +14,7 @@ function App() {
   const handlePredict = async () => {
     setError(null);
     try {
-      const response = await axios.post('http://127.0.0.1:5000/predict', {
+      const response = await axios.post('https://customer-segmentation-w63z.onrender.com/predict', {
         Recency: parseFloat(recency),
         Frequency: parseInt(frequency),
         Monetary: parseFloat(monetary)
