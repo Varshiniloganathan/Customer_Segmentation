@@ -1,0 +1,94 @@
+/* App.css */
+
+body {
+  background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient background */
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  padding: 50px;
+}
+
+.app-container {
+  max-width: 500px;
+  margin: auto;
+}
+
+h2 {
+  color: #333;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+input, button {
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+  width: 80%;
+  max-width: 400px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+input:focus, button:focus {
+  outline: none;
+  border-color: #ff7e5f;
+  box-shadow: 0 4px 10px rgba(255, 126, 95, 0.6);
+}
+
+input {
+  background-color: #f9f9f9;
+}
+
+button {
+  background-color: #ff7e5f;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #feb47b;
+}
+
+h3 {
+  color: #fff;
+  font-size: 24px;
+}
+
+p {
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+}
+
+.error {
+  color: red;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.suggestions {
+  font-size: 18px;
+  margin-top: 20px;
+  font-weight: normal;
+  color: red;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+
+  input, button {
+    width: 100%;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+}
+
+.logo {
+  width: 100px;
+  margin-bottom: 20px;
+}
